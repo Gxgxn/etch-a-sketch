@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>Etch a Sketch</h1>
-
+    <h1 class="pg-title">Etch A Sketch</h1>
     <div class="container">
       <div id="controller">
         <form id="color-input">
@@ -55,8 +54,28 @@
               value="#e74c3c"
             />
           </div>
+          <dialog id="modal">
+            <h2>How To Use</h2>
+            <ul>
+              <li>Click on the grid to turn on/off coloring</li>
+              <li>Simply Drag your mouse to color in the grid</li>
+              <li>You can choose fill style by clicking the radio button</li>
+              <li>
+                You can choose grid size by using the slider & clicking generate
+                grid Button
+              </li>
+              <li>
+                Made a Mess? just click Clear button , to erase the canvas
+              </li>
+            </ul>
 
-          <!-- <button type="button" class="btn" id="clear-grid">Clear</button> -->
+            <button type="button" class="btn close-button" id="clear-grid">
+              Close
+            </button>
+          </dialog>
+          <button type="button" class="btn open-button" id="clear-grid">
+            How to Use?
+          </button>
         </form>
       </div>
       <div id="container-cell"></div>

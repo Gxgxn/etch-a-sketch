@@ -96,3 +96,15 @@ function generateRandom() {
   let a = Math.floor(Math.random() * 226);
   return `rgb(${r},${g},${a})`;
 }
+
+const modal = document.querySelector("#modal");
+const openModal = document.querySelector(".open-button");
+const closeModal = document.querySelector(".close-button");
+
+openModal.addEventListener("click", () => {
+  modal.showModal();
+});
+
+closeModal.addEventListener("click", () => {
+  modal.close();
+});
