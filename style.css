@@ -1,22 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap");
+:root {
+  --card-bg: rgba(215, 215, 215, 0.43);
+  --cnt-clr: rgb(10, 61, 98);
+  --btn-hover: rgb(74, 105, 189);
+}
+
 * {
   margin: 0;
   padding: 0;
   outline: 0;
 }
 body {
-  height: auto;
+  font-family: "Roboto", Helvetica;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  min-height: 100vh;
+  background-size: 300%;
+  background-position: left;
+  animation: bg-animation 15s alternate infinite;
 }
-#container {
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+.container {
+  width: 80%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-block: 2rem;
+  padding: 1em;
+}
+#container-cell {
+  grid-column: 3 /4;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
   border: 1px solid green;
-  background: #686868;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5.6px);
+  border: 1px solid rgba(215, 215, 215, 0.3);
   height: 35rem;
   width: 35rem;
-  margin-inline: auto;
 }
 .cell {
-  border: 1px solid rgba(128, 128, 128, 0.46);
+  border: 1px solid rgba(236, 236, 236, 0.46);
+  backdrop-filter: blur;
   transition: background-color 0.2s ease-in;
+}
+#controller {
+  background: var(--card-bg);
+  border-radius: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.6px);
+  -webkit-backdrop-filter: blur(5.6px);
+  border: 1px solid rgba(215, 215, 215, 0.3);
+  padding: 2em;
+  color: var(--cnt-clr);
+  text-align: center;
+}
+.btn {
+  display: block;
+  padding: 0.5em 1em;
+  background: rgb(30, 55, 153);
+  border: none;
+  border-radius: 2px;
+  width: 100%;
+  cursor: pointer;
+  margin-block: 1em;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  transition: background 0.1s ease-in-out;
+}
+.btn:hover {
+  background: var(--btn-hover);
+}
+#size {
+  width: 100%;
+}
+.r-btn {
+  display: flex;
+  align-items: center;
+  margin-block: 0.5em;
 }

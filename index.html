@@ -10,7 +10,46 @@
   <body>
     <h1>Etch a Sketch</h1>
 
-    <div id="container"></div>
+    <div class="container">
+      <div id="controller">
+        <form>
+          <input
+            type="range"
+            id="size"
+            name="size"
+            min="5"
+            max="75"
+            step="5"
+            value="15"
+          />
+          <label for="range" id="size-display">Grid-Size: 15</label>
+          <button type="button" class="btn" id="create-grid">
+            Create grid
+          </button>
+          <button type="button" class="btn" id="clear-grid">Clear</button>
+
+          <label>Fill Color</label>
+          <div class="r-btn">
+            <input type="radio" name="color-choice" value="random" />
+            <label for="radio">Random color</label>
+          </div>
+          <div class="r-btn">
+            <input type="radio" name="color-choice" value="Monochrome" />
+            <label for="radio">Monochrome</label>
+          </div>
+
+          <div class="r-btn">
+            <input type="radio" name="color-choice" value="pick color" />
+            <label for="radio">Pick Colour</label>
+            <input type="color" name="color-choice" value="#e74c3c" />
+          </div>
+
+          <button type="button" class="btn" id="clear-grid">Clear</button>
+        </form>
+      </div>
+      <div id="container-cell"></div>
+    </div>
+
     <script src="./index.js"></script>
   </body>
 </html>
