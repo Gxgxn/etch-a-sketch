@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+body {
+  height: auto;
+}
+#container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  border: 1px solid green;
+  background: #686868;
+  height: 35rem;
+  width: 35rem;
+  margin-inline: auto;
+}
+.cell {
+  border: 1px solid rgba(128, 128, 128, 0.46);
+  transition: background-color 0.2s ease-in;
+}
