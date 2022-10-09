@@ -12,7 +12,7 @@
 
     <div class="container">
       <div id="controller">
-        <form>
+        <form id="color-input">
           <input
             type="range"
             id="size"
@@ -29,22 +29,34 @@
           <button type="button" class="btn" id="clear-grid">Clear</button>
 
           <label>Fill Color</label>
+
           <div class="r-btn">
-            <input type="radio" name="color-choice" value="random" />
-            <label for="radio">Random color</label>
+            <label>
+              <input type="radio" name="colorChoice" value="random" />
+              Random color</label
+            >
           </div>
           <div class="r-btn">
-            <input type="radio" name="color-choice" value="Monochrome" />
-            <label for="radio">Monochrome</label>
+            <label>
+              <input type="radio" name="colorChoice" value="monochrome" />
+              Monochrome</label
+            >
           </div>
 
           <div class="r-btn">
-            <input type="radio" name="color-choice" value="pick color" />
-            <label for="radio">Pick Colour</label>
-            <input type="color" name="color-choice" value="#e74c3c" />
+            <label>
+              <input type="radio" name="colorChoice" value="custom" />
+              Pick Colour</label
+            >
+            <input
+              type="color"
+              name="colorChoice"
+              id="clr-pick"
+              value="#e74c3c"
+            />
           </div>
 
-          <button type="button" class="btn" id="clear-grid">Clear</button>
+          <!-- <button type="button" class="btn" id="clear-grid">Clear</button> -->
         </form>
       </div>
       <div id="container-cell"></div>

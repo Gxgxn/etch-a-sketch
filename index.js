@@ -2,10 +2,13 @@ let gridContainer = document.getElementById("container-cell");
 let colValue = 16;
 let gridRange = document.getElementById("size");
 let createGridBtn = document.querySelector("#create-grid");
+let clearGrid = document.querySelector("#clear-grid");
 let gridActive = false;
+let clrPicker = document.querySelector("#clr-pick");
+let colorVal;
 //creating grid
 function createGrid(colValue) {
-  for (i = 1; i < colValue * colValue; i++) {
+  for (i = 1; i <= colValue * colValue; i++) {
     let cell = document.createElement("div");
     cell.classList.add("cell");
     gridContainer.style.gridTemplateColumns = `repeat(${colValue}, 1fr)`;
@@ -34,7 +37,14 @@ createGridBtn.addEventListener("click", () => {
   createGrid(gridRange.value);
 });
 
-//clears populated grid
+//clear-grid removes color from grid
+clearGrid.addEventListener("click", (e) => {
+  document
+    .querySelectorAll(".cell")
+    .forEach((cell) => (cell.style.backgroundColor = "transparent"));
+});
+
+//removes populated grid
 function removeGrid() {
   document.querySelectorAll(".cell").forEach((cell) => cell.remove());
 }
@@ -52,6 +62,37 @@ function captureCells() {
   });
 }
 
+const colorButtons = document.querySelector("#color-input");
+colorButtons.addEventListener("click", function () {
+  console.log(colorButtons.colorChoice.value);
+});
+
 function colorChange(e) {
-  e.target.style.backgroundColor = "#e74c3c";
+  colorVal = colorButtons.colorChoice.value;
+  switch (colorVal) {
+    case "monochrome":
+      e.target.style.backgroundColor = generateMono();
+      break;
+    case "random":
+      e.target.style.backgroundColor = generateRandom();
+      break;
+    case "custom":
+      e.target.style.backgroundColor = clrPicker.value;
+      break;
+    default:
+      e.target.style.backgroundColor = "#e74c3c";
+  }
+}
+//mono colours
+function generateMono() {
+  let v = Math.floor(Math.random() * 226);
+  return `rgb(${v},${v},${v})`;
+}
+
+//  random colour generator
+function generateRandom() {
+  let r = Math.floor(Math.random() * 226);
+  let g = Math.floor(Math.random() * 226);
+  let a = Math.floor(Math.random() * 226);
+  return `rgb(${r},${g},${a})`;
 }
